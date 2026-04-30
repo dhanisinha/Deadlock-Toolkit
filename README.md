@@ -88,4 +88,4 @@ It focuses on clarity rather than matching real OS-level complexity.
 
 ## Author
 
-Vishal Tiwari
+Dhani Sinha
