@@ -1,75 +1,91 @@
-# Deadlock Prevention, Detection, and Recovery Toolkit
+# Deadlock Prevention, Detection and Recovery Toolkit
 
-A beginner-friendly Python toolkit that simulates OS-style process/resource competition and demonstrates:
+This is a Python-based project I built to understand how deadlocks work in operating systems and how they can be handled using different techniques.
 
-- Deadlock avoidance (Banker's Algorithm)
-- Deadlock detection (Work/Finish vectors)
-- Deadlock prevention strategies
-- Deadlock recovery techniques
-- Resource Allocation Graph (cycle visibility)
-- Real-time request simulation loop
+The idea was to simulate processes and resources in a simple way so that concepts like Banker’s Algorithm, detection, and recovery become easier to see and experiment with.
 
-## Project Structure
+---
 
-- `main.py` - Menu-driven CLI entry point
-- `simulator.py` - Core system state + real-time execution engine
-- `bankers.py` - Need matrix + safe-state + request safety checks
-- `detection.py` - Deadlock detection using Work/Finish
-- `prevention.py` - Hold-and-wait, ordering, and preemption prevention logic
-- `recovery.py` - Termination and preemption recovery strategies
-- `graph.py` - Resource Allocation Graph + cycle detection + visualization
-- `sample_cases.py` - Predefined safe and deadlock-style scenarios
-- `requirements.txt` - External dependencies for graphing
+## What this project does
 
-## Setup
+* Checks safe and unsafe states using Banker’s Algorithm
+* Detects deadlocks using the Work and Finish method
+* Demonstrates different prevention techniques
+* Simulates recovery using process termination and resource preemption
+* Shows Resource Allocation Graph and detects cycles
+* Allows real-time request simulation through a CLI
 
-1. Create or activate a Python environment.
+---
+
+## Project files
+
+```
+main.py           - Menu-driven program to run everything
+simulator.py      - Handles system state and simulation
+bankers.py        - Banker’s Algorithm logic
+detection.py      - Deadlock detection logic
+prevention.py     - Prevention techniques
+recovery.py       - Recovery strategies
+graph.py          - Resource Allocation Graph and cycle detection
+sample_cases.py   - Example test cases
+requirements.txt  - Required libraries
+```
+
+---
+
+## How to run
+
+1. Clone the repository
 2. Install dependencies:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
-## Run
+3. Run the project:
 
-```bash
+```
 python main.py
 ```
 
-## CLI Features
+---
+
+## Features in the CLI
 
 From the menu you can:
 
-1. Input custom system state
-2. Select prevention strategy
-3. Run real-time request simulation
-4. Check safe state (Banker's Algorithm)
-5. Detect deadlock
-6. Visualize Resource Allocation Graph
-7. Trigger recovery
+* Enter your own system state
+* Run simulation step-by-step
+* Check if the system is in a safe state
+* Detect deadlock
+* Visualize the resource allocation graph
+* Apply recovery techniques
 
-## Input Format Notes
+---
 
-- Allocation matrix: one row per process, values separated by spaces
-- Max matrix: same shape as Allocation
-- Available vector: one value per resource type
-- Request vector during simulation: one value per resource type
+## Input format (simple idea)
 
-## Included Sample Test Cases
+* Allocation → resources currently assigned
+* Max → maximum demand of each process
+* Available → free resources
+* Request → new request during simulation
 
-- `safe_case`: Common Banker's Algorithm example with safe sequence
-- `deadlock_case`: Tight-resource scenario useful for detection/recovery practice
+---
 
-## Recovery Modes
+## Sample cases
 
-- Process termination:
-  - Priority mode (higher numeric value = lower importance)
-  - Least resource usage mode
-- Resource preemption:
-  - Preempt selected resource units from deadlocked processes
+* safe_case → shows a safe sequence
+* deadlock_case → useful for testing detection and recovery
 
-## Educational Notes
+---
 
-- The toolkit favors clarity and readability over low-level OS complexity.
-- Prevention and recovery policies are intentionally explicit to make behavior easy to observe.
-- Real OS schedulers/resource managers have additional constraints not modeled here.
+## Notes
+
+This project is mainly for learning purposes.
+It focuses on clarity rather than matching real OS-level complexity.
+
+---
+
+## Author
+
+Vishal Tiwari
